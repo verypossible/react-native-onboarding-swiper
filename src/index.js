@@ -302,7 +302,7 @@ Onboarding.defaultProps = {
 
 const styles = {
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.1)',
+    backgroundColor: '#f2f2f2',
   },
 };
 
