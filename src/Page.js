@@ -11,6 +11,7 @@ const Page = ({
   height,
   containerStyles,
   imageContainerStyles,
+  textContainerStyles,
   allowFontScaling,
   titleStyles,
   subTitleStyles,
@@ -40,8 +41,10 @@ const Page = ({
   return (
     <View style={[styles.container, containerStyles, { width, height }]}>
       <View style={[styles.imageContainer, imageContainerStyles]}>{image}</View>
-      {titleElement}
-      {subtitleElement}
+      <View style={[styles.textContainer, textContainerStyles]}>
+        {titleElement}
+        {subtitleElement}
+      </View>
     </View>
   );
 };
@@ -50,6 +53,7 @@ Page.propTypes = {
   isLight: PropTypes.bool.isRequired,
   image: PropTypes.element.isRequired,
   containerStyles: ViewPropTypes.style,
+  textContainerStyles: ViewPropTypes.style,
   imageContainerStyles: ViewPropTypes.style,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
   subtitle: PropTypes.oneOfType([PropTypes.string, PropTypes.element])
@@ -64,6 +68,7 @@ Page.propTypes = {
 Page.defaultProps = {
   containerStyles: null,
   imageContainerStyles: null,
+  textContainerStyles: null,
   allowFontScaling: true,
   titleStyles: null,
   subTitleStyles: null,
@@ -83,6 +88,11 @@ const styles = {
   imageContainer: {
     flex: 0,
     paddingBottom: potrait ? 60 : 10,
+    alignItems: 'center',
+    width: '100%',
+  },
+  textContainer: {
+    flex: 0,
     alignItems: 'center',
     width: '100%',
   },

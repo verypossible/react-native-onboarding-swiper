@@ -82,6 +82,7 @@ class Onboarding extends Component {
     const {
       containerStyles,
       imageContainerStyles,
+      textContainerStyles,
       allowFontScalingText,
       titleStyles,
       subTitleStyles,
@@ -97,6 +98,7 @@ class Onboarding extends Component {
         height={this.state.height || Dimensions.get('window').height}
         containerStyles={containerStyles}
         imageContainerStyles={imageContainerStyles}
+        textContainerStyles={textContainerStyles}
         allowFontScaling={allowFontScalingText}
         titleStyles={Object.assign(
           {},
@@ -259,6 +261,7 @@ Onboarding.propTypes = {
   DotComponent: PropTypes.oneOfType([PropTypes.element, PropTypes.func]),
   containerStyles: ViewPropTypes.style,
   imageContainerStyles: ViewPropTypes.style,
+  textContainerStyles: ViewPropTypes.style,
   allowFontScalingText: PropTypes.bool,
   allowFontScalingButtons: PropTypes.bool,
   titleStyles: Text.propTypes.style,
@@ -287,6 +290,7 @@ Onboarding.defaultProps = {
   DotComponent: Dot,
   containerStyles: null,
   imageContainerStyles: null,
+  textContainerStyles: null,
   allowFontScalingText: true,
   allowFontScalingButtons: true,
   titleStyles: null,
